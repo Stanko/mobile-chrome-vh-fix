@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Mobile Chrome vh units fix</title>
+</head>
+<body>
+  <div class="Bears">
+    <div class="Overlay Overlay--dark"></div>
+    <div class="Container">
+      <h1>Mobile Chrome <code>vh</code> units fix</h1>
+      <h2>What is this?</h2>
+      <p>
+        Mobile (Android and iOS) Chrome has something I consider a bug.
+        On scroll, when address bar dissapears, inner window height is changed,
+        and with it <code>vh</code> units size is changed as well,
+        making whole page to jump after recalculating the layout.
+        This also happens when keyboard pops up.
+      </p>
+
+      <p>
+        This small library aims to solve that problem.
+      </p>
+
+      <a href="#usage">Jump to usage.</a>
+    </div>
+  </div>
+  <div class="Docs">
+    <div class="Container" id="usage">
+      <h2>Documentation</h2>
+      <p>
+        Grab it from <a href="https://github.com/Stanko/mobile-chrome-vh-fix">GitHub.</a>
+      </p>
+
+      <h2>Usage</h2>
+      <pre><span class="Color--blue">var</span> vhFix = <span class="Color--red">new</span> <span class="Color--green">VHChromeFix</span>(options)</pre>
+
+      <p>
+        Options is an array of objects, every containing two attributes - CSS class
+        and height in vh units.
+      </p>
+<pre>
+<span class="Color--blue">var</span> options = [
+  {
+    <span class="Color--yellow">selector</span>: '.Bears', <span class="Color--gray">// Mandatory, CSS selector</span>
+    <span class="Color--yellow">vh</span>: 150,  <span class="Color--gray">// Mandatory, height in vh units</span>
+  },
+  {
+    <span class="Color--yellow">selector</span>: '.Foxes',
+    <span class="Color--yellow">vh</span>: 50
+  },
+  {
+    <span class="Color--yellow">selector</span>: '.Horses',
+    <span class="Color--yellow">vh</span>: 100
+  }
+];
+
+<span class="Color--blue">var</span> vhFix = <span class="Color--red">new</span> <span class="Color--green">VHChromeFix</span>(options);
+</pre>
+      <h2>Examples</h2>
+      <p>
+        This page contains three divs that are using vh units. Header at the top, and two divs below.
+        Scroll and check them out.
+      </p>
+      <h2>TODO</h2>
+      <ul>
+        <li>Better documentation</li>
+        <li>React component</li>
+      </ul>
+    </div>
+  </div>
+  <div class="Foxes">
+    <div class="Overlay"></div>
+    <div class="Container">
+      <p>This block has a height of <code>50vh</code></p>
+    </div>
+  </div>
+  <div class="Horses">
+    <div class="Overlay"></div>
+    <div class="Container">
+      <p>This block has a height of <code>150vh</code></p>
+      <small>
+        Photos used are from National Geographic's
+        <a href="http://travel.nationalgeographic.com/photographer-of-the-year-2016/gallery/winners-all/1">
+          2016 Travel Photographer of the Year Contest
+        </a>.
+      </small>
+    </div>
+  </div>
+
+  <script src="mobile-chrome-vh-fix.js"></script>
+  <script>
+    var vhFix = new VHChromeFix([
+      {
+        selector: '.Bears',
+        vh: 100
+      },
+      {
+        selector: '.Foxes',
+        vh: 50
+      },
+      {
+        selector: '.Horses',
+        vh: 150
+      }
+    ]);
+  </script>
+</body>
+</html>

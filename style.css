@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  background: #202123;
+  color: #f8f8fb;
+  font-size: 15px;
+}
+
+@media (min-width: 500px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+.Bears {
+  height: 100vh;
+  background: #111 url(img/3.jpg) no-repeat 70% center;
+}
+
+.Foxes {
+  height: 50vh;
+  background: #111 url(img/2.jpg) no-repeat center 80% ;
+}
+
+.Horses {
+  height: 150vh;
+  background: #111 url(img/1.jpg) no-repeat bottom center;
+}
+
+.Docs,
+.Bears,
+.Foxes,
+.Horses {
+  background-size: cover;
+  position: relative;
+}
+
+.Container {
+  margin: 0 auto;
+  max-width: 700px;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.Overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+}
+
+.Overlay--dark {
+  background: rgba(0,0,0,0.6);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+p {
+  margin-bottom: 1em;
+  line-height: 1.4em;
+}
+
+code,
+pre {
+  font-family: "Monaco", "Consolas", "Menlo", monospace;
+  font-size: 0.9em;
+  color: #eee;
+}
+
+pre {
+  line-height: 1.5em;
+  background: #28292c;
+  border-radius: 3px;
+  padding: 0.8em 1em;
+  white-space: pre;
+  word-break: keep-all;
+  word-wrap: normal;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1em;
+}
+
+.Color--blue {
+  color: #6BD9ED;
+}
+
+.Color--green {
+  color: #A7E040;
+}
+
+.Color--purple {
+  color: #AE85FC;
+}
+
+.Color--red {
+  color: #DC2B6A;
+}
+
+.Color--yellow {
+  color: #E6DA7B;
+}
+
+.Color--gray {
+  color: #75715F;
+}
+
+a {
+  color: rgba(255,255,255,0.6);
+}
+
+small {
+  display: block;
+  margin-top: 50px;
+}
+
+ul {
+  padding-left: 20px;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
