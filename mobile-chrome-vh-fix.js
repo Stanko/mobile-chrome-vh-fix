@@ -16,7 +16,7 @@ var VHChromeFix = function(selectors) {
 
     window.addEventListener('resize', function() {
       // Both width and height changed (orientation change)
-      // This is a hack, as Android when eyboard pops up
+      // This is a hack, as Android when keyboard pops up
       // Triggers orientation change
       if (self.windowWidth !== window.innerWidth && self.windowHeight !== window.innerHeight) {
         self.windowWidth = window.innerWidth;
