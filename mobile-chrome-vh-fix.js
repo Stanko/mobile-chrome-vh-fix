@@ -39,9 +39,11 @@ VHChromeFix.prototype.getElements = function(selectors) {
 
     // Go through all elements for one selector to filter them
     for (var j = 0; j < elements.length; j++) {
+      var offset = selectors[i].offset || 0;
       this.elements.push({
         domElement: elements[j],
-        vh: selectors[i].vh
+        vh: selectors[i].vh,
+        offset: offset
       });
     }
   }
@@ -54,6 +56,7 @@ VHChromeFix.prototype.isArray = function(array) {
 VHChromeFix.prototype.fixAll = function() {
   for (var i = 0; i < this.elements.length; i++) {
     var element = this.elements[i];
-    element.domElement.style.height = (window.innerHeight * element.vh / 100) + 'px';
+    var offset = element.offset;
+    element.domElement.style.height = (window.innerHeight * (element.vh / 100) - offset) + 'px';
   }
 };
