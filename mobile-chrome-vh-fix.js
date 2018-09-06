@@ -41,7 +41,8 @@ VHChromeFix.prototype.getElements = function(selectors) {
     for (var j = 0; j < elements.length; j++) {
       this.elements.push({
         domElement: elements[j],
-        vh: selectors[i].vh
+        vh: selectors[i].vh,
+        minVh: selectors[i].minVh
       });
     }
   }
@@ -55,5 +56,6 @@ VHChromeFix.prototype.fixAll = function() {
   for (var i = 0; i < this.elements.length; i++) {
     var element = this.elements[i];
     element.domElement.style.height = (window.innerHeight * element.vh / 100) + 'px';
+    element.domElement.style.minHeight = (window.innerHeight * element.minVh / 100) + 'px';
   }
 };
